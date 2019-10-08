@@ -1,0 +1,418 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "%matplotlib inline\n",
+    "\n",
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "from numpy.random import randint\n",
+    "from ipywidgets import interact_manual\n",
+    "import time\n",
+    "from time import sleep"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from ipywidgets.widgets import *\n",
+    "from IPython.display import display"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "html = HTML('<h1>Hi</h1>')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "5595cdf7ef8c468981f307849f9c7a4a",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "HTML(value='<h1>Hi</h1>')"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(html)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "html.value = '<h1 style=\"color:red;\">你好</h1>'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p=IntProgress()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "p.value=55"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "71687575567341e98a1e0d3c138dd585",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "IntProgress(value=55)"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(p)\n",
+    "for i in range(101):\n",
+    "    p.value=i\n",
+    "    sleep(0.2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "b = Button(\n",
+    "    description='按我',\n",
+    "    button_style='info', # 這風格還有 'success', 'warning', 'danger' 等等 \n",
+    "    width='100px'\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "72d04a470ece40389c54de413886484d",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Button(button_style='info', description='按我', style=ButtonStyle())"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "img_html = HTML(\"<img src='images/numpy.png'>\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "8ac78e4a8f2a4423bfa71f03b1655bde",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "HTML(value=\"<img src='images/numpy.png'>\")"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(img_html)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "8ac78e4a8f2a4423bfa71f03b1655bde",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "HTML(value=\"<img src='images/numpy.png'>\")"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(img_html)\n",
+    "for i in range(60):\n",
+    "    img_html.value = \"&nbsp;\" * i + \"<img src='images/numpy.png'>\"\n",
+    "    sleep(0.1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "me = Text(\"輸入訊息...\")\n",
+    "me.description = \"輸入\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "style1 = \"<p style='position:relative; left:80px; padding:10px; border-radius:25px; color:white; background:#4080FF; width:200px;'>\"\n",
+    "style2 = \"<p style='padding:10px; border-radius:25px; background:#F1F0F0; width:200px;'>\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def pipi(sender):\n",
+    "    display(HTML(style1 + me.value + '</p> <br>'))\n",
+    "    display(HTML(style2 + '拍拍' + '</p> <br>'))\n",
+    "    me.value = ''"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "me.on_submit(pipi)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "16503846a7b54ed1bfc07d9f5be472fc",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Text(value='輸入訊息...', description='輸入')"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "ccf262a0493b4fd3b8ff586969420396",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "HTML(value=\"<p style='position:relative; left:80px; padding:10px; border-radius:25px; color:white; background:…"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    },
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "a8f6959ae3bc40f4b74e48f48005fa42",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "HTML(value=\"<p style='padding:10px; border-radius:25px; background:#F1F0F0; width:200px;'>拍拍</p> <br>\")"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(me)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "buttons = [Button(description=str(i)) for i in range(1,10)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "for b in buttons:\n",
+    "    b.button_style = \"success\"\n",
+    "    b.width = \"50px\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "groups = [buttons[3*i:3*i+3] for i in range(3)] "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "layout = VBox([HBox(groups[0]), HBox(groups[1]), HBox(groups[2])])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "002a4af75472405aa963057c42c93b20",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "VBox(children=(HBox(children=(Button(button_style='info', description='1', style=ButtonStyle()), Button(button…"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "display(layout)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
